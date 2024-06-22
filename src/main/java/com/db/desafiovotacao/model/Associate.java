@@ -34,6 +34,18 @@ public class Associate
         this.id = id;
     }
 
+    public Associate()
+    {
+    }
+
+    public Associate( Integer id, String name, String cpf, LocalDateTime created )
+    {
+        this.id = id;
+        this.name = name;
+        this.cpf = cpf;
+        this.created = created;
+    }
+
     public String getName()
     {
         return name;

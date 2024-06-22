@@ -1,5 +1,6 @@
 package com.db.desafiovotacao.api.v1.controlers;
 
+import com.db.desafiovotacao.dto.AssociateDto;
 import com.db.desafiovotacao.exceptions.AssociateNotFoundException;
 import com.db.desafiovotacao.model.Associate;
 import com.db.desafiovotacao.service.AssociateService;
@@ -23,7 +24,7 @@ public class AssociateController
     {
         try
         {
-            List<Associate> associates = service.findAll();
+            List<AssociateDto> associates = service.findAll();
 
             return ResponseEntity.ok(associates);
         }
@@ -38,7 +39,7 @@ public class AssociateController
     {
         try
         {
-            Associate associate = service.findById(associateId);
+            AssociateDto associate = service.findById(associateId);
 
             return ResponseEntity.ok(associate);
         }
@@ -49,11 +50,11 @@ public class AssociateController
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Object> create( @Valid @RequestBody Associate associate)
+    public ResponseEntity<Object> create( @Valid @RequestBody AssociateDto associate)
     {
         try
         {
-            Associate newAssociate = service.create(associate);
+            AssociateDto newAssociate = service.create(associate);
 
             return ResponseEntity.status(HttpStatus.CREATED).body(newAssociate  );
         }
