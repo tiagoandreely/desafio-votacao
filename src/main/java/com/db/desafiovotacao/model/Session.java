@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -30,6 +31,7 @@ public class Session
     @Column(name = "voting_agenda_id", nullable = false)
     private Integer votingAgendaId;
 
+    @CreationTimestamp
     private LocalDateTime created;
 
     public boolean isClosed()

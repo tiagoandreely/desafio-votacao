@@ -70,6 +70,30 @@ public class Mapper
         return session;
     }
 
+    public static List<Session> listToMapSession( List<SessionDto> sessionDtos )
+    {
+        List<Session> sessions = new ArrayList<>();
+
+        for( SessionDto s : sessionDtos )
+        {
+            sessions.add( mapToSession( s ) );
+        }
+
+        return sessions;
+    }
+
+    public static List<SessionDto> listToMapSessionDto( List<Session> sessions )
+    {
+        List<SessionDto> sessionsDto = new ArrayList<>();
+
+        for( Session s : sessions )
+        {
+            sessionsDto.add( mapToSessionDto( s ) );
+        }
+
+        return sessionsDto;
+    }
+
     public static VoteDto mapToVoteDto( Vote vote)
     {
         VoteDto voteDto = new VoteDto(
@@ -118,5 +142,29 @@ public class Mapper
         );
 
         return votingAgendaDto;
+    }
+
+    public static List<VotingAgendaDto> listToMapToVotingAgendaDto( List<VotingAgenda> votingAgendas )
+    {
+        List<VotingAgendaDto> agendasDto = new ArrayList<>();
+
+        for( VotingAgenda a : votingAgendas )
+        {
+            agendasDto.add( mapToVotingAgendaDto( a ) );
+        }
+
+        return agendasDto;
+    }
+
+    public static List<VotingAgenda> listToMapToVotingAgenda( List<VotingAgendaDto> votingAgendasDto )
+    {
+        List<VotingAgenda> agendas = new ArrayList<>();
+
+        for( VotingAgendaDto a : votingAgendasDto )
+        {
+            agendas.add( mapToVotingAgenda( a ) );
+        }
+
+        return agendas;
     }
 }

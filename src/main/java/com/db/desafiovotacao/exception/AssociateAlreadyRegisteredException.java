@@ -1,4 +1,4 @@
-package com.db.desafiovotacao.exceptions;
+package com.db.desafiovotacao.exception;
 
 public class AssociateAlreadyRegisteredException extends RuntimeException
 {

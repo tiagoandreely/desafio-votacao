@@ -1,5 +1,6 @@
 package com.db.desafiovotacao.repository;
 
+import com.db.desafiovotacao.dto.AssociateDto;
 import com.db.desafiovotacao.model.Associate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
