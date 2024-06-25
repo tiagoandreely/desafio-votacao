@@ -77,4 +77,22 @@ public class VoteResultDto
     {
         this.againstVotes = againstVotes;
     }
+
+    @Override
+    public boolean equals( Object o )
+    {
+        if ( this == o ) return true;
+        if ( o == null || getClass() != o.getClass() ) return false;
+
+        VoteResultDto resultDto = (VoteResultDto) o;
+        return favorVotes.equals( resultDto.favorVotes ) && againstVotes.equals( resultDto.againstVotes );
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = favorVotes.hashCode();
+        result = 31 * result + againstVotes.hashCode();
+        return result;
+    }
 }

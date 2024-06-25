@@ -1,8 +1,9 @@
 package com.db.desafiovotacao.dto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class AssociateDto
+public class AssociateDto implements Serializable
 {
     private Integer id;
 
